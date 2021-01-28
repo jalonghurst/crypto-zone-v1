@@ -73,6 +73,22 @@ function App() {
           
         </form>
       </div>
+
+      <div className ="coin-tabs">
+        <button
+          className= "coin-tabs"
+          // onClick={onButtonSubmit} 
+        >News</button>
+        <button
+          className= "coin-tabs"
+          // onClick={onButtonSubmit} 
+        >History</button>
+        <button
+          className= "coin-tabs"
+          // onClick={onButtonSubmit} 
+        >Indexes</button>
+      </div>
+
       {filteredCoins.map(coin => {
         return (
           <Coin 
