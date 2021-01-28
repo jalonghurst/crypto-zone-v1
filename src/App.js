@@ -47,6 +47,7 @@ function App() {
 
  return (
 <div>
+    <div className = 'coin-button-container'>
       <button
       className= "coin-button"
       // onClick={onButtonSubmit} 
@@ -59,6 +60,7 @@ function App() {
       className= "coin-button"
       // onClick={onButtonSubmit} 
      >Indexes</button>
+     </div>
     
     <div className='coin-app'>
     <div className='app'><Particles className='particles'
@@ -73,8 +75,8 @@ function App() {
           
         </form>
       </div>
-
-      <div className ="coin-tabs">
+      
+      <div className ="coin-tab-container">
         <button
           className= "coin-tabs"
           // onClick={onButtonSubmit} 
