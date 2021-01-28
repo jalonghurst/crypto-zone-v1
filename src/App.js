@@ -80,7 +80,7 @@ function App() {
         <button
           className= "coin-tabs"
           // onClick={onButtonSubmit} 
-        >News</button>
+        >USD</button>
         <button
           className= "coin-tabs"
           // onClick={onButtonSubmit} 
