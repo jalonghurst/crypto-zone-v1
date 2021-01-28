@@ -1,9 +1,28 @@
 import React, { useState, useEffect} from 'react';
+import Particles from "react-particles-js";
 import axios from 'axios';
 import './App.css';
 import Coin from './Coin';
 
-
+const particlesOptions = {
+    particles: {
+      number: {
+        value: 10,
+        density: {
+          enable: true,
+          value_area: 200     
+        }
+      }  
+    }
+    //  "interactivity": {
+	  //       "events": {
+	  //           "onhover": {
+	  //               "enable": true,
+	  //               "mode": "repulse"
+	  //           }
+	  //       }
+	  //   }
+}
 
 function App() {
   const [coins, setCoins] = useState([])
@@ -26,7 +45,25 @@ function App() {
   ) 
 
  return (
+<div>
+      <button
+      className= "w-30 grow f4 link ph3 pv2 dib white bg-light-purple"
+      // onClick={onButtonSubmit} 
+     >Detect</button>
+     <button
+      className= "w-30 grow f4 link ph3 pv2 dib white bg-light-purple"
+      // onClick={onButtonSubmit} 
+     >Detect</button>
+     <button
+      className= "w-30 grow f4 link ph3 pv2 dib white bg-light-purple"
+      // onClick={onButtonSubmit} 
+     >Detect</button>
+    
     <div className='coin-app'>
+    <div className='app'><Particles className='particles'
+        params={particlesOptions}/>
+        </div>
+       
       <div className ="coin-search">
         <h1 className ="coin-text">Search a currency</h1>
         <form>
@@ -49,6 +86,7 @@ function App() {
           />
         );
       })}
+    </div>
     </div>
   );
  }
