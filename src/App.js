@@ -10,7 +10,8 @@ const particlesOptions = {
         value: 10,
         density: {
           enable: true,
-          value_area: 200     
+          value_area: 200  
+            
         }
       }  
     }
@@ -47,17 +48,17 @@ function App() {
  return (
 <div>
       <button
-      className= "w-30 grow f4 link ph3 pv2 dib white bg-light-purple"
+      className= "coin-button"
       // onClick={onButtonSubmit} 
-     >Detect</button>
+     >News</button>
      <button
-      className= "w-30 grow f4 link ph3 pv2 dib white bg-light-purple"
+      className= "coin-button"
       // onClick={onButtonSubmit} 
-     >Detect</button>
+     >History</button>
      <button
-      className= "w-30 grow f4 link ph3 pv2 dib white bg-light-purple"
+      className= "coin-button"
       // onClick={onButtonSubmit} 
-     >Detect</button>
+     >Indexes</button>
     
     <div className='coin-app'>
     <div className='app'><Particles className='particles'
