@@ -3,7 +3,6 @@ import Particles from "react-particles-js";
 
 import styled from "@emotion/styled";
 import { useTheme } from "./ThemeContext";
-// Check dependancies
 
 
 import axios from 'axios';
