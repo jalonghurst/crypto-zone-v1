@@ -1,8 +1,16 @@
 import React, { useState, useEffect} from 'react';
 import Particles from "react-particles-js";
+
+import styled from "@emotion/styled";
+import { useTheme } from "./ThemeContext";
+
+
+
 import axios from 'axios';
 import './App.css';
 import Coin from './Coin';
+
+
 
 const particlesOptions = {
     particles: {
@@ -25,7 +33,20 @@ const particlesOptions = {
 	  //   }
 }
 
+const Wrapper = styled("div")`
+  background: ${props => props.theme.background};
+  width: 100vw;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
+  h1 {
+    color: ${props => props.theme.body};
+  }
+`;
+
 function App() {
+  const themeState = useTheme();
+
+
   const [coins, setCoins] = useState([])
   const [search,setSearch] =useState('')
   useEffect(() => {
@@ -43,9 +64,18 @@ function App() {
 
  const filteredCoins = coins.filter(coin =>
   coin.name.toLowerCase().includes(search.toLowerCase())
-  ) 
+  )
+  
 
  return (
+
+   <Wrapper>
+      <h1>Dark Mode example</h1>
+      <div>
+        <button onClick={() => themeState.toggle()}>
+          {themeState.dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        </button>
+   
 <div>
     <div className = 'coin-button-container'>
       <button
@@ -72,7 +102,6 @@ function App() {
         <form>
           <input type="text" placeholder="Search"
           className="coin-input" onChange={handleChange}/>
-          
         </form>
       </div>
       
@@ -106,7 +135,10 @@ function App() {
         );
       })}
     </div>
+    </div>   
+    
     </div>
+    </Wrapper>
   );
- }
+ };
 export default App;
