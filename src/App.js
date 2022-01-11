@@ -70,14 +70,15 @@ function App() {
  return (
 
    <Wrapper>
-      <h1>Dark Mode example</h1>
+      <h1>Dark Mode</h1>
       <div>
         <button onClick={() => themeState.toggle()}>
           {themeState.dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
         </button>
    
 <div>
-    <div className = 'coin-button-container'>
+  {/* top menu */}
+    {/* <div className = 'coin-button-container'>
       <button
       className= "coin-button"
       // onClick={onButtonSubmit} 
@@ -91,7 +92,7 @@ function App() {
       // onClick={onButtonSubmit} 
      >Indexes</button>
      </div>
-    
+     */}
     <div className='coin-app'>
     <div className='app'><Particles className='particles'
         params={particlesOptions}/>
