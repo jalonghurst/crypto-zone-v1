@@ -32,6 +32,7 @@ const particlesOptions = {
 	  //   }
 }
 
+// fix dark theme issue
 const Wrapper = styled("div")`
   background: ${props => props.theme.background};
   width: 100vw;
