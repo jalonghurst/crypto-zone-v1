@@ -1,8 +1,10 @@
 import React, { useState, useEffect} from 'react';
 import Particles from "react-particles-js";
-
 import styled from "@emotion/styled";
 import { useTheme } from "./ThemeContext";
+import 'bootstrap/dist/css/bootstrap.css';
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
 
 
 import axios from 'axios';
@@ -36,7 +38,7 @@ const particlesOptions = {
 const Wrapper = styled("div")`
   background: ${props => props.theme.background};
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
   h1 {
     color: ${props => props.theme.body};
@@ -70,34 +72,24 @@ function App() {
  return (
 
    <Wrapper>
-      <h1>Dark Mode</h1>
       <div>
         <button onClick={() => themeState.toggle()}>
           {themeState.dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
         </button>
    
 <div>
-  {/* top menu */}
-    {/* <div className = 'coin-button-container'>
-      <button
-      className= "coin-button"
-      // onClick={onButtonSubmit} 
-     >News</button>
-     <button
-      className= "coin-button"
-      // onClick={onButtonSubmit} 
-     >History</button>
-     <button
-      className= "coin-button"
-      // onClick={onButtonSubmit} 
-     >Indexes</button>
-     </div>
-     */}
     <div className='coin-app'>
     <div className='app'><Particles className='particles'
         params={particlesOptions}/>
         </div>
-       
+
+
+        {/* Tabs Navigation Bar */}
+
+        <div style={{ display: 'block', width: 700, padding: 30 }}>
+      <Tabs defaultActiveKey="second">
+        <Tab eventKey="first" title="Search">
+           {/* Coin search */}
       <div className ="coin-search">
         <h1 className ="coin-text">Search a currency</h1>
         <form>
@@ -105,22 +97,6 @@ function App() {
           className="coin-input" onChange={handleChange}/>
         </form>
       </div>
-      
-      <div className ="coin-tab-container">
-        <button
-          className= "coin-tabs"
-          // onClick={onButtonSubmit} 
-        >USD</button>
-        <button
-          className= "coin-tabs"
-          // onClick={onButtonSubmit} 
-        >History</button>
-        <button
-          className= "coin-tabs"
-          // onClick={onButtonSubmit} 
-        >Indexes</button>
-      </div>
-
       {filteredCoins.map(coin => {
         return (
           <Coin 
@@ -135,6 +111,35 @@ function App() {
           />
         );
       })}
+
+        </Tab>
+        <Tab eventKey="second" title="Setting">
+          Hii, I am 2nd tab content
+        </Tab>
+        <Tab eventKey="third" title="Aboutus">
+          Hii, I am 3rd tab content
+        </Tab>
+      </Tabs>
+    </div>
+       
+      
+      
+      {/* <div className ="coin-tab-container">
+        <button
+          className= "coin-tabs"
+          // onClick={onButtonSubmit} 
+        >USD</button>
+        <button
+          className= "coin-tabs"
+          // onClick={onButtonSubmit} 
+        >History</button>
+        <button
+          className= "coin-tabs"
+          // onClick={onButtonSubmit} 
+        >Indexes</button>
+      </div> */}
+
+     
     </div>
     </div>   
     

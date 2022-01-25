@@ -1,14 +1,18 @@
+import { particlesJS } from "tsparticles";
+
+
 const white = "#FFFFFF";
 const black = "#161617";
+const particlesdark = particlesJS
 const gray = "#F8F8F9";
 
 const themeLight = {
   background: gray,
-  body: black
+  body: black,
 };
 
 const themeDark = {
-  background: black,
+  background: particlesdark,
   body: white
 };
 
