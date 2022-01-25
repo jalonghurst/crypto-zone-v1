@@ -16,13 +16,18 @@ import Coin from './Coin';
 const particlesOptions = {
     particles: {
       number: {
-        value: 10,
+        value: 9,
         density: {
           enable: true,
-          value_area: 200  
+          value_area: 300,  
             
         }
-      }  
+        
+      },
+      color: { value: "#ff0000" },
+      
+      
+    
     }
     //  "interactivity": {
 	  //       "events": {
@@ -86,12 +91,16 @@ function App() {
 
         {/* Tabs Navigation Bar */}
 
-        <div style={{ display: 'block', width: 700, padding: 30 }}>
+        <div style={{ display: 'block', width: 700, padding: 30, }}>
       <Tabs defaultActiveKey="second">
-        <Tab eventKey="first" title="Search">
-           {/* Coin search */}
+        <Tab eventKey="first" title="Market">
+           
+        </Tab>
+        <Tab eventKey="second" title="Search Coins">
+        {/* Coin search */}
+        <br></br>
       <div className ="coin-search">
-        <h1 className ="coin-text">Search a currency</h1>
+        <h3 className ="coin-text">Search a currency</h3>
         <form>
           <input type="text" placeholder="Search"
           className="coin-input" onChange={handleChange}/>
@@ -113,17 +122,13 @@ function App() {
       })}
 
         </Tab>
-        <Tab eventKey="second" title="Setting">
-          Hii, I am 2nd tab content
-        </Tab>
         <Tab eventKey="third" title="Aboutus">
           Hii, I am 3rd tab content
         </Tab>
       </Tabs>
     </div>
        
-      
-      
+      {/* previous navigation buttons */}
       {/* <div className ="coin-tab-container">
         <button
           className= "coin-tabs"
