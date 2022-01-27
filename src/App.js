@@ -10,10 +10,9 @@ import Tab from 'react-bootstrap/Tab';
 import Header from './components/Header';
 import axios from 'axios';
 import Coin from './Coin';
+import { makeStyles } from '@material-ui/core';
+import { particlesJS } from 'tsparticles';
 // import CoinPage from './components/CoinPage';
-
-
-
 
 const particlesOptions = {
     particles: {
@@ -21,32 +20,26 @@ const particlesOptions = {
         value: 9,
         density: {
           enable: true,
-          value_area: 200,  
-            
+          value_area: 200,              
         }
-        
       },
       color: { value: "#ff0000" },
-      
-      
-    
     }
 }
 
-// fix dark theme issue
-// const Wrapper = styled("div")`
-//   background: ${props => props.theme.background};
-//   width: 100vw;
-//   height: 100%;
-//   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
-//   h1 {
-//     color: ${props => props.theme.body};
-//   }
-// `;
-
 function App() {
+  // Material UI useStyles set up
+const useStyles = makeStyles(() => ({
+  App: {
+    background: particlesJS,
+    colour: "white",
+    minHeight: "100vh"
 
-  // const themeState = useTheme();
+  }
+}));
+  const classes = useStyles();
+
+
   const [coins, setCoins] = useState([])
   const [search,setSearch] =useState('')
 
@@ -70,17 +63,12 @@ function App() {
 
  return (
  <BrowserRouter>
-   {/* <Wrapper> */}
-      <div>
+      <div className = {classes.App}>
         <Header/>
         {/* Homepage Route
         <Route path='/' component={Coin} exact />
         <Route path='/coins/:id' component={CoinPage}/> */}
 
-        {/* <button onClick={() => themeState.toggle()}>
-          {themeState.dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-        </button> */}
-   
 <div>
     <div className='coin-app'>
     <div className='app'><Particles className='particles'
@@ -154,30 +142,10 @@ function App() {
           Hii, I am 3rd tab content
         </Tab>
       </Tabs>
-    </div>
-       
-      {/* previous navigation buttons */}
-      {/* <div className ="coin-tab-container">
-        <button
-          className= "coin-tabs"
-          // onClick={onButtonSubmit} 
-        >USD</button>
-        <button
-          className= "coin-tabs"
-          // onClick={onButtonSubmit} 
-        >History</button>
-        <button
-          className= "coin-tabs"
-          // onClick={onButtonSubmit} 
-        >Indexes</button>
-      </div> */}
-
-     
+    </div>     
     </div>
     </div>   
-    
     </div>
-    {/* </Wrapper> */}
     </BrowserRouter>
  
   );
