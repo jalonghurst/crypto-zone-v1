@@ -1,15 +1,16 @@
 import React, { useState, useEffect} from 'react';
+import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 import Particles from "react-particles-js";
 import styled from "@emotion/styled";
 import { useTheme } from "./ThemeContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-
-
+import Header from './components/Header';
 import axios from 'axios';
-import './App.css';
 import Coin from './Coin';
+
 
 
 
@@ -29,14 +30,6 @@ const particlesOptions = {
       
     
     }
-    //  "interactivity": {
-	  //       "events": {
-	  //           "onhover": {
-	  //               "enable": true,
-	  //               "mode": "repulse"
-	  //           }
-	  //       }
-	  //   }
 }
 
 // fix dark theme issue
@@ -75,9 +68,10 @@ function App() {
   
 
  return (
-
+   <BrowserRouter>
    <Wrapper>
       <div>
+        <Header/>
         <button onClick={() => themeState.toggle()}>
           {themeState.dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
         </button>
@@ -179,6 +173,9 @@ function App() {
     
     </div>
     </Wrapper>
+    </BrowserRouter>
+ 
   );
  };
+ 
 export default App;
