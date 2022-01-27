@@ -1,15 +1,16 @@
 import React, { useState, useEffect} from 'react';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Particles from "react-particles-js";
-import styled from "@emotion/styled";
-import { useTheme } from "./ThemeContext";
+// import styled from "@emotion/styled";
+// import { useTheme } from "./ThemeContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import Header from './components/Header';
 import axios from 'axios';
 import Coin from './Coin';
+// import CoinPage from './components/CoinPage';
 
 
 
@@ -33,19 +34,19 @@ const particlesOptions = {
 }
 
 // fix dark theme issue
-const Wrapper = styled("div")`
-  background: ${props => props.theme.background};
-  width: 100vw;
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
-  h1 {
-    color: ${props => props.theme.body};
-  }
-`;
+// const Wrapper = styled("div")`
+//   background: ${props => props.theme.background};
+//   width: 100vw;
+//   height: 100%;
+//   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
+//   h1 {
+//     color: ${props => props.theme.body};
+//   }
+// `;
 
 function App() {
 
-  const themeState = useTheme();
+  // const themeState = useTheme();
   const [coins, setCoins] = useState([])
   const [search,setSearch] =useState('')
 
@@ -68,13 +69,17 @@ function App() {
   
 
  return (
-   <BrowserRouter>
-   <Wrapper>
+ <BrowserRouter>
+   {/* <Wrapper> */}
       <div>
         <Header/>
-        <button onClick={() => themeState.toggle()}>
+        {/* Homepage Route
+        <Route path='/' component={Coin} exact />
+        <Route path='/coins/:id' component={CoinPage}/> */}
+
+        {/* <button onClick={() => themeState.toggle()}>
           {themeState.dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-        </button>
+        </button> */}
    
 <div>
     <div className='coin-app'>
@@ -172,7 +177,7 @@ function App() {
     </div>   
     
     </div>
-    </Wrapper>
+    {/* </Wrapper> */}
     </BrowserRouter>
  
   );
