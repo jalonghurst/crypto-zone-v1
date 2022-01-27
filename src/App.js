@@ -19,7 +19,7 @@ const particlesOptions = {
         value: 9,
         density: {
           enable: true,
-          value_area: 300,  
+          value_area: 200,  
             
         }
         
@@ -51,11 +51,11 @@ const Wrapper = styled("div")`
 `;
 
 function App() {
+
   const themeState = useTheme();
-
-
   const [coins, setCoins] = useState([])
   const [search,setSearch] =useState('')
+
   useEffect(() => {
     axios
       .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
@@ -98,6 +98,8 @@ function App() {
         </Tab>
         <Tab eventKey="second" title="Search Coins">
         {/* Coin search */}
+         
+      
         <br></br>
       <div className ="coin-search">
         <h3 className ="coin-text">Search a currency</h3>
@@ -105,6 +107,31 @@ function App() {
           <input type="text" placeholder="Search"
           className="coin-input" onChange={handleChange}/>
         </form>
+
+        <div className='coin-row'>
+            <div className='coin'>
+                <h1>Coin</h1>
+                <p className='coin-symbol'>symbol</p>
+            </div>
+            <div className ='coin-data'>      
+                <p className= 'coin-price'> Price</p>
+                <p className= 'coin-volume'>Volume</p>
+    
+                  <p className= 'coin-percent red'>%Ch.24h</p>  
+                
+                  <p className= 'coin-marketcap'>
+                    Mkt Cap:
+                  </p>
+                  <p className= 'coin-price'>
+                    24h High
+                  </p>
+                  <p className= 'coin-price'>
+                    24h Low:
+                 </p>
+            
+            </div>             
+          </div>
+
       </div>
       {filteredCoins.map(coin => {
         return (
@@ -117,6 +144,8 @@ function App() {
           price={coin.current_price}
           priceChange={coin.price_change_percentage_24h}
           volume={coin.total_volume}
+          high24h={coin.high_24h}
+          low24h={coin.low_24h}
           />
         );
       })}
