@@ -1,7 +1,7 @@
 import { AppBar, Container, MenuItem, Select, Toolbar, Typography } from '@material-ui/core';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
     title: {
@@ -26,8 +26,7 @@ const Header = () => {
                   <Typography 
                   onclick={() => navigate("/")} 
                   className={classes.title}
-                  >
-                      CryptoZone
+                  >CryptoZone
                   </Typography>
                   <Select variant='outlined'
                   style ={{
