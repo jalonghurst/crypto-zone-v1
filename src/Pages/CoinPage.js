@@ -86,10 +86,10 @@ const CoinPage = () => {
         <img
           src={coin?.image.large}
           alt={coin?.name}
-          height="200"
+          height="100"
           style={{ marginBottom: 20 }}
         />
-        <Typography variant="h3" className={classes.heading}>
+        <Typography variant="h4" className={classes.heading}>
           {coin?.name}
         </Typography>
         <Typography variant="subtitle1" className={classes.description}>
@@ -97,12 +97,12 @@ const CoinPage = () => {
         </Typography>
         <div className={classes.marketData}>
           <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h6" className={classes.heading}>
               Rank:
             </Typography>
             &nbsp; &nbsp;
             <Typography
-              variant="h5"
+              variant="h6"
               style={{
                 fontFamily: "Montserrat",
               }}
@@ -112,12 +112,12 @@ const CoinPage = () => {
           </span>
 
           <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h6" className={classes.heading}>
               Current Price:
             </Typography>
             &nbsp; &nbsp;
             <Typography
-              variant="h5"
+              variant="h6"
               style={{
                 fontFamily: "Montserrat",
               }}
@@ -129,12 +129,12 @@ const CoinPage = () => {
             </Typography>
           </span>
           <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h6" className={classes.heading}>
               Market Cap:
             </Typography>
             &nbsp; &nbsp;
             <Typography
-              variant="h5"
+              variant="h6"
               style={{
                 fontFamily: "Montserrat",
               }}
@@ -145,9 +145,28 @@ const CoinPage = () => {
                   .toString()
                   .slice(0, -6)
               )}
-              M
+              
             </Typography>
           </span>
+          <span style={{ display: "flex" }}>
+            <Typography variant="h6" className={classes.heading}>
+              ATH:
+            </Typography>
+            &nbsp; &nbsp;
+            <Typography
+              variant="h6"
+              style={{
+                fontFamily: "Montserrat",
+              }}
+            >
+              {symbol}{" "}
+              {numberWithCommas(
+                coin?.market_data.ath[currency.toLowerCase()]
+              )}
+            </Typography>
+          </span>
+
+          
         </div>
       </div>
       <CoinInfo coin={coin} />

@@ -49,7 +49,7 @@ import {
                 variant="h6"
                 className={classes.title}
               >
-                Crypto Hunter
+                Crypto Zone
               </Typography>
               {/* <Button color="inherit">Login</Button> */}
               <Select
@@ -61,7 +61,7 @@ import {
                 onChange={(e) => setCurrency(e.target.value)}
               >
                 <MenuItem value={"USD"}>USD</MenuItem>
-                <MenuItem value={"INR"}>INR</MenuItem>
+                <MenuItem value={"EUR"}>EUR</MenuItem>
               </Select>
             </Toolbar>
           </Container>

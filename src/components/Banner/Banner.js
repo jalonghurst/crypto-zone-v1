@@ -3,8 +3,10 @@ import Carousel from "./Carousel";
 
 const useStyles = makeStyles((theme) => ({
   banner: {
-    backgroundImage: "url(./bannerbackdrop.jpg)",
-  
+    backgroundImage: "url(./bannerdots.jpg)",
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
   },
   bannerContent: {
     height: 400,
@@ -42,7 +44,7 @@ function Banner() {
               fontFamily: "Montserrat",
             }}
           >
-            Crypto Hunter
+            Crypto Zone
           </Typography>
           <Typography
             variant="subtitle2"
