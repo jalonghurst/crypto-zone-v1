@@ -148,9 +148,60 @@ const CoinPage = () => {
               
             </Typography>
           </span>
+          
           <span style={{ display: "flex" }}>
             <Typography variant="h6" className={classes.heading}>
-              ATH:
+              Total Volume:
+            </Typography>
+            &nbsp; &nbsp;
+            <Typography
+              variant="h6"
+              style={{
+                fontFamily: "Montserrat",
+              }}
+            >
+              {symbol}{" "}
+              {numberWithCommas(
+                coin?.market_data.total_volume[currency.toLowerCase()]
+              )}
+            </Typography>
+          </span>
+          <span style={{ display: "flex" }}>
+            <Typography variant="h6" className={classes.heading}>
+              High 24h:
+            </Typography>
+            &nbsp; &nbsp;
+            <Typography
+              variant="h6"
+              style={{
+                fontFamily: "Montserrat",
+              }}
+            >
+              {symbol}{" "}
+              {numberWithCommas(
+                coin?.market_data.high_24h[currency.toLowerCase()]
+              )}
+            </Typography>
+          </span>
+          <span style={{ display: "flex" }}>
+            <Typography variant="h6" className={classes.heading}>
+              Low 24h:
+            </Typography>
+            &nbsp; &nbsp;
+            <Typography
+              variant="h6"
+              style={{
+                fontFamily: "Montserrat",
+              }}
+            >
+              {symbol}{" "}
+              {numberWithCommas(
+                coin?.market_data.low_24h[currency.toLowerCase()]
+              )}
+            </Typography>
+          </span><span style={{ display: "flex" }}>
+            <Typography variant="h6" className={classes.heading}>
+              Past Year High:
             </Typography>
             &nbsp; &nbsp;
             <Typography
@@ -165,7 +216,23 @@ const CoinPage = () => {
               )}
             </Typography>
           </span>
-
+          <span style={{ display: "flex" }}>
+            <Typography variant="h6" className={classes.heading}>
+              Past Year Low:
+            </Typography>
+            &nbsp; &nbsp;
+            <Typography
+              variant="h6"
+              style={{
+                fontFamily: "Montserrat",
+              }}
+            >
+              {symbol}{" "}
+              {numberWithCommas(
+                coin?.market_data.atl[currency.toLowerCase()]
+              )}
+            </Typography>
+          </span>
           
         </div>
       </div>
