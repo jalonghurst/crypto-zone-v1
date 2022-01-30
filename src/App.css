@@ -1,23 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap");
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth ;
-  font-family: 'Montserrat',sans-serif;
-  /*( color: #fff; */
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-
-
-a{
+a {
   text-decoration: none;
   color: gold;
 }
 
-.particles {
+/* .particles {
   background-color: #070718; 
   position: fixed; 
   top: 0;
@@ -111,4 +106,4 @@ a{
 
 .coin-input::placeholder {
   color: #e2e2e2;
-}
+} */
