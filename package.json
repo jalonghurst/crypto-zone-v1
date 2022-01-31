@@ -28,7 +28,7 @@
 
   "engines": {
     "node": "16.13.2", 
-    "npm": "8.3.1" },
+    "npm": "8.4" },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
